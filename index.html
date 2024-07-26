@@ -1,211 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CopyGenPass</title>
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CopyGenPass</title>
 
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-      @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 
-      * {
-        font-family: "Montserrat", sans-serif;
-      }
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
-      .pass-field {
-        font-family: "Courier Prime", monospace;
-        letter-spacing: 0.2rem;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container my-2">
-      <!-- NAVBAR -->
-      <nav class="navbar text-bg-light border px-2 rounded-3">
-        <a href="#" class="navbar-brand"
-          ><img
-            src="https://www.basketkrka.si/media/objave/galerija/2017%202018/Sponzorji/CGP.PNG"
-            alt="logo"
-            width="80px"
-            class="rounded-3"
-        /></a>
-        <h5 class="navbar-title">CopyGenPass</h5>
-        <button
-          type="button"
-          class="navbar-toggler"
-          data-bs-toggle="collapse"
-          data-bs-target="#nav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    * {
+      font-family: "Montserrat", sans-serif;
+    }
 
-        <!-- HAMBURGER MENU -->
-        <div class="collapse navbar-collapse" id="nav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a
-                href="contact.html"
-                class="nav-link text-bg-danger text-center rounded mt-2"
-                >Contact</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                href="contact.html"
-                class="nav-link text-bg-danger text-center rounded mt-2"
-                >About Me</a
-              >
-            </li>
-          </ul>
-        </div>
-      </nav>
+    .pass-field {
+      font-family: "Courier Prime", monospace;
+      letter-spacing: 0.2rem;
+    }
+  </style>
+</head>
 
-      <!-- PASSWORD FIELD -->
-      <div class="d-flex justify-content-center">
-        <div class="position-relative w-75 my-4">
-          <input
-            type="text"
-            value="ivoryMu$ic20"
-            class="text-center rounded py-2 border border-dark-subtle w-100 pass-field"
-            id="generatedPass"
-            readonly
-          />
-          <span
-            class="badge text-bg-success position-absolute top-0 start-100 translate-middle"
-            id="strongBadge"
-            >strong</span
-          >
-          <span
-            class="badge text-bg-warning position-absolute top-0 start-100 translate-middle d-none"
-            id="weakBadge"
-            >weak</span
-          >
-        </div>
+<body>
+  <div class="container my-2">
+    <!-- NAVBAR -->
+    <nav class="navbar text-bg-light border px-2 rounded-3">
+      <a href="#" class="navbar-brand"><img
+          src="https://www.basketkrka.si/media/objave/galerija/2017%202018/Sponzorji/CGP.PNG" alt="logo" width="80px"
+          class="rounded-3" /></a>
+      <h5 class="navbar-title">CopyGenPass</h5>
+      <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- HAMBURGER MENU -->
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link text-bg-danger text-center rounded mt-2">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link text-bg-danger text-center rounded mt-2">About Me</a>
+          </li>
+        </ul>
       </div>
+    </nav>
 
-      <!-- FORM -->
-      <form action="#">
-        <!-- PASSWORD LENGTH -->
-        <label for="range" class="form-label">Password Length</label>
-        <span class="badge text-bg-light border mx-1" id="inputBadge"></span>
-        <input
-          type="range"
-          class="form-range"
-          id="range"
-          min="8"
-          max="20"
-          value="10"
-        />
-
-        <!-- PASSWORD TYPE -->
-        <div class="d-flex justify-content-center">
-          <input
-            type="radio"
-            id="memorable"
-            class="btn-check"
-            name="password-type"
-            autocomplete="off"
-            checked
-          />
-          <label for="memorable" class="btn btn-outline-danger mx-2 w-50"
-            >Memorable</label
-          >
-
-          <input
-            type="radio"
-            id="random"
-            class="btn-check"
-            name="password-type"
-            autocomplete="off"
-          />
-          <label for="random" class="btn btn-outline-danger mx-2 w-50"
-            >Random</label
-          >
-        </div>
-
-        <!-- INPUT WORD -->
-        <div class="d-flex justify-content-between align-items-end">
-          <label for="inputWord" class="form-label d-block mt-4"
-            >Input Word</label
-          >
-          <span class="badge text-bg-secondary mb-2">optional</span>
-        </div>
-        <input
-          type="text"
-          id="inputWord"
-          name="inputWord"
-          class="form-control border border-dark-subtle mb-4"
-        />
-
-        <div class="d-flex justify-content-center my-2">
-          <button
-            type="button"
-            class="btn btn-outline-primary w-50"
-            id="generateBtn"
-            onclick="generatePass()"
-          >
-            Generate
-          </button>
-        </div>
-      </form>
-
-      <div class="d-flex justify-content-center">
-        <button
-          type="button"
-          class="btn btn-outline-success w-50"
-          onclick="copyToClipboard()"
-          id="copyBtn"
-        >
-          Copy
-        </button>
+    <!-- PASSWORD FIELD -->
+    <div class="d-flex justify-content-center">
+      <div class="position-relative w-75 my-4">
+        <input type="text" value="" class="text-center rounded py-2 border border-dark-subtle w-100 pass-field"
+          id="generatedPass" readonly />
+        <span class="badge text-bg-success position-absolute top-0 start-100 translate-middle"
+          id="strongBadge">strong</span>
+        <span class="badge text-bg-warning position-absolute top-0 start-100 translate-middle d-none"
+          id="weakBadge">weak</span>
       </div>
     </div>
 
-    <script>
-      document.getElementById("range").addEventListener("input", function () {
-        document.getElementById("inputBadge").innerText = this.value;
-      });
+    <!-- PASSWORD LENGTH -->
+    <label for="range" class="form-label">Password Length:</label>
+    <span class="badge text-bg-light border mx-1" id="inputBadge"></span>
+    <input type="range" class="form-range" id="range" min="4" max="20" value="10" />
 
-      document.getElementById("inputBadge").innerText =
-        document.getElementById("range").value;
+    <!-- PASSWORD TYPE -->
+    <div class="d-flex justify-content-center my-3">
+      <input type="radio" id="memorable" class="btn-check" name="password-type" autocomplete="off" checked />
+      <label for="memorable" class="btn btn-outline-danger mx-2 w-50">Memorable</label>
 
-      // COPY FUNCTION
-      function copyToClipboard() {
-        const input = document.getElementById("generatedPass");
-        const copyBtn = document.getElementById("copyBtn");
+      <input type="radio" id="random" class="btn-check" name="password-type" autocomplete="off" />
+      <label for="random" class="btn btn-outline-danger mx-2 w-50">Random</label>
+    </div>
 
-        input.select();
-        document.execCommand("copy");
-        copyBtn.innerText = "Copied!";
-        copyBtn.classList.remove("btn-outline-success");
-        copyBtn.classList.add("btn-success");
-      }
+    <!-- INPUT WORD -->
+    <div class="d-flex justify-content-between align-items-end">
+      <label for="inputWord" class="form-label d-block mt-4">Input Word</label>
+      <span class="badge text-bg-secondary mb-2">optional</span>
+    </div>
+    <input type="text" id="inputWord" name="inputWord" class="form-control border border-dark-subtle mb-4" />
 
-      // GENERATE PASSWORD
-      function generatePass() {
-        const generateBtn = document.getElementById("generateBtn");
-        const input = document.getElementById("generatedPass");
-        const copyBtn = document.getElementById("copyBtn");
+    <!-- PASSWORD INCLUSION -->
+    <div class="my-4">
+      <p>Password should include:</p>
+      <div class="my-1">
+        <input type="checkbox" class="form-check-input" id="numbers" name="numbers" checked />
+        <label for="numbers" class="form-check-label">Numbers</label>
+      </div>
 
-        const length = document.getElementById("range").value;
-        const chars =
-          "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+[]{}|;:,.<>?";
-        let password = "";
+      <div class="my-1">
+        <input type="checkbox" class="form-check-input" id="lowercase" name="lowercase" checked />
+        <label for="lowercase" class="form-check-label">Lowercases</label>
+      </div>
 
-        for (let i = 0; i < length; i++) {
+      <div class="my-1">
+        <input type="checkbox" class="form-check-input" id="uppercase" name="uppercase" checked />
+        <label for="uppercase" class="form-check-label">Uppercases</label>
+      </div>
+
+      <div class="my-1">
+        <input type="checkbox" class="form-check-input" id="specialChars" name="specialChars" />
+        <label for="specialChars" class="form-check-label">Special Characters</label>
+      </div>
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="d-flex justify-content-center my-2">
+      <button type="button" class="btn btn-outline-primary w-50" id="generateBtn" onclick="generatePass()">
+        Generate
+      </button>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <button type="button" class="btn btn-outline-success w-50" onclick="copyToClipboard()" id="copyBtn">
+        Copy
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // INITIAL PASSWORD
+    generatePass();
+
+    // PASSWORD BADGE
+    document.getElementById("range").addEventListener("input", function () {
+      document.getElementById("inputBadge").innerText = this.value;
+    });
+
+    document.getElementById("inputBadge").innerText =
+      document.getElementById("range").value;
+
+    // COPY FUNCTION
+    function copyToClipboard() {
+      const input = document.getElementById("generatedPass");
+      const copyBtn = document.getElementById("copyBtn");
+
+      input.select();
+      document.execCommand("copy");
+      copyBtn.innerText = "Copied!";
+      copyBtn.classList.remove("btn-outline-success");
+      copyBtn.classList.add("btn-success");
+    }
+
+    // GENERATE PASSWORD
+    async function generatePass() {
+      const generateBtn = document.getElementById("generateBtn");
+      const input = document.getElementById("generatedPass");
+      const copyBtn = document.getElementById("copyBtn");
+
+      const length = parseInt(document.getElementById("range").value);
+
+      let password = "";
+      let wordLength = 0;
+
+      if (document.getElementById("uppercase").checked || document.getElementById("lowercase").checked || document.getElementById("numbers").checked || document.getElementById("specialChars").checked) {
+        if (document.getElementById('memorable').checked) {
+          wordLength = Math.floor(Math.random() * length + 1);
+          if (wordLength < 2) wordLength = 2;
+
+          try {
+            const response = await fetch(`https://random-word-api.herokuapp.com/word?length=${wordLength}`);
+            const data = await response.json();
+            password = data[0];
+          } catch (error) {
+            console.log('Error ', error);
+          }
+        }
+
+        const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const lowercase = "abcdefghijklmnopqrstuvwxyz";
+        const numbers = "0123456789";
+        const specialChars = "!@#$%^&*()_+[]{}|;:,.<>?";
+
+        let chars = "";
+
+        if (document.getElementById("uppercase").checked) chars += uppercase;
+        if (document.getElementById("lowercase").checked) chars += lowercase;
+        if (document.getElementById("numbers").checked) chars += numbers;
+        if (document.getElementById("specialChars").checked)
+          chars += specialChars;
+
+        for (let i = 0; i < length - wordLength; i++) {
           const randomIndex = Math.floor(Math.random() * chars.length);
           password += chars[randomIndex];
         }
@@ -222,7 +202,11 @@
         copyBtn.innerText = "Copy";
         copyBtn.classList.remove("btn-success");
         copyBtn.classList.add("btn-outline-success");
+      } else {
+        document.getElementById("generatedPass").value = 'null';
       }
-    </script>
-  </body>
+    }
+  </script>
+</body>
+
 </html>
